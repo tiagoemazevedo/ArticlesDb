@@ -1,12 +1,9 @@
 // Update with your config settings.
+const { db } = require('./.env')
 
 module.exports = {
   client: 'postgresql',
-  connection: {
-    database: 'articlesdb',
-    user: 'postgres',
-    password: 'postgres'
-  },
+  connection: db,
   pool: {
     min: 2,
     max: 10
@@ -14,6 +11,4 @@ module.exports = {
   migrations: {
     tableName: 'knex_migrations'
   }
-
-
 };
