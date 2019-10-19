@@ -1,13 +1,13 @@
 <template>
     <div class="article-by-id">
-        <PageTitle icon="fa fa-file-o" : main="article.name" :sub="article.description" />
+        <PageTitle icon="fa fa-file-o" :main="article.name" :sub="article.description" />
         <div class="article-content" v-html="article.content"></div>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
-import { baseapiUrl } from '@/global'
+import { baseApiUrl } from '@/global'
 import PageTitle from '../template/PageTitle'
 
 export default {

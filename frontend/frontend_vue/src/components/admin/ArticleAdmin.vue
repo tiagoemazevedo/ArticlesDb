@@ -76,7 +76,7 @@
     </b-table>
     <b-pagination size="md" v-model="page"
       :total-rows="count" :per-page="limit"
-      @click="" />
+      @click="loadArticles" />
   </div>
 </template>
 
