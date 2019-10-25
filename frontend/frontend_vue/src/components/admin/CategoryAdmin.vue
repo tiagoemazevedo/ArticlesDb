@@ -30,7 +30,7 @@
     </b-form>
     <hr />
     <b-table hover striped :items="categories" :fields="fields">
-      <template slot="actions" slot-scope="data">
+      <template v-slot:cell(actions)="data">
         <b-button variant="warning" @click="loadCategory(category.item)" class="mr-2">
           <i class="fa fa-pencil"></i>
         </b-button>
@@ -89,7 +89,7 @@ export default {
           this.$toasted.global.defaultSuccess();
           this.reset();
         })
-        .cathc(showError);
+        .catch(showError);
     },
     remove() {
       const id = this.category.id;

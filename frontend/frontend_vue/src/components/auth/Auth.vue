@@ -82,7 +82,7 @@ export default {
         margin-bottom: 15px;
     }
 
-    .auth-modal {
+    .auth-modal input {
         border : 1px solid #bbb;
         width: 100%;
         margin-bottom: 15px;

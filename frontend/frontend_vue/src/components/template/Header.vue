@@ -6,7 +6,7 @@
         <h1 class="title">
             <router-link to='/'>{{ title }}</router-link>
         </h1>
-        <UserDropDown v-if="!hideUserDropdown" />
+        <UserDropDown v-if="!hideUserDropDown" />
     </header>
 </template>
 
@@ -19,7 +19,7 @@ export default {
     props: {
         title: String,
         hideToggle: Boolean,
-        hideUserDropdown: Boolean
+        hideUserDropDown: Boolean
     },
     computed: {
         icon() {

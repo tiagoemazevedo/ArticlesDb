@@ -1,0 +1,24 @@
+BUG REPORT AND SOLVING
+
+- Admin user/category/article page - SOLVED
+    description:    does not render the action buttons
+    cause:  changes in slot component in vue 2.6, use v-slot instead
+
+-  Edit (pencil) button in admin pages
+    description: does not load item information in the form
+    cause:
+
+- creating new article
+    description: "name required", console shows POST bad request
+    cause:
+
+- user admin delete action
+    description: "unkown error", console shows Access to XMLHttpRequest at 'http://localhost:3000/users/3' 
+                    from origin 'http://localhost:8080' has been blocked by CORS policy: 
+                    No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+                    After the error, pressing cancel it does delete the user
+
+-  side menu barely visible
+    description: wrong color in style
+    

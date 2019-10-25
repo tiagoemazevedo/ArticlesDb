@@ -54,22 +54,25 @@
 
         </b-form>
         <hr>
-        <b-table hover striped :items="users" :fields="fields">
-            <template slot="actions" slot-scope="data">
+        <template>
+        <b-table hover striped :items="users" :fields="fields" >
+            <!-- <template slot="actions" slot-scope="data">  old vue slot use, changed in 2.6 --> 
+            <template v-slot:cell(actions)="data">
                 <b-button variant="warning" @click="loadUser(user.item)" class="mr-2">
-                    <i class="fa fa-pencil"></i>
-                </b-button>
+                    <i class="fa fa-pencil"/></b-button>
                 <b-button variant="danger" @click="loadUser(data.item, 'remove')">
-                    <i class="fa fa-trash"></i>
-                </b-button>
+                    <i class="fa fa-trash"/></b-button>
             </template>
-        </b-table>
+        </b-table>        
+        </template>
     </div>
 </template>
 
 <script>
 import { baseApiUrl, showError } from '@/global'
 import axios from 'axios'
+
+
 
 export default {
     name: 'UserAdmin',
@@ -92,9 +95,7 @@ export default {
     methods: {
         loadUsers() {
             const url = `${baseApiUrl}/users`
-            axios.get(url).then(res => {
-                this.users = res.data
-            })
+            axios.get(url).then(res => this.users = res.data)
         },
         loadUser (user, mode = 'save') {
             this.mode = mode
@@ -115,7 +116,7 @@ export default {
                     this.$toasted.global.defaultSuccess()
                     this.reset()
                 })
-                .cathc(showError)
+                .catch(showError)
         },
         remove() {
             const id = this.user.id

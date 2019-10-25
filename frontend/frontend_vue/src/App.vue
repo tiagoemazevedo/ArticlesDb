@@ -88,7 +88,7 @@ export default {
 			"menu footer";
 	}
 
-	.app.hide-menu {
+	#app.hide-menu {
 		grid-template-areas:
 			"header header"
 			"content content"

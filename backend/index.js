@@ -3,7 +3,6 @@ const consign = require('consign')
 const mongoose = require('mongoose')
 
 //require('./config/mongodb')
-//problems connecting to mongo db
 
 const db = require('./config/db')
 
