@@ -66,7 +66,7 @@
     <hr />
     <b-table hover striped :items="articles" :fields="fields">
       <template v-slot:cell(actions)="data">
-        <b-button variant="warning" @click="loadArticle(article.item)" class="mr-2">
+        <b-button variant="warning" @click="loadArticle(data.item)" class="mr-2">
           <i class="fa fa-pencil"></i>
         </b-button>
         <b-button variant="danger" @click="loadArticle(data.item, 'remove')">
@@ -111,11 +111,12 @@ export default {
       const url = `${baseApiUrl}/articles?page=${this.page}`;
       axios.get(url).then(res => {
         //this.articles = res.data);
-        this.article = res.data.data
+        this.articles = res.data.data
         this.count = res.data.count
         this.limit = res.data.limit
       })
       .catch(showError)
+
     },
     loadArticle(article, mode = "save") {
       this.mode = mode;

@@ -31,7 +31,7 @@
     <hr />
     <b-table hover striped :items="categories" :fields="fields">
       <template v-slot:cell(actions)="data">
-        <b-button variant="warning" @click="loadCategory(category.item)" class="mr-2">
+        <b-button variant="warning" @click="loadCategory(data.item)" class="mr-2">
           <i class="fa fa-pencil"></i>
         </b-button>
         <b-button variant="danger" @click="loadCategory(data.item, 'remove')">

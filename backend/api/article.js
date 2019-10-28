@@ -6,7 +6,7 @@ module.exports = app => {
     const { existsOrError, notExistsOrError } = app.api.validation
 
     const save = (req, res) => {
-        const article = { ... req.body }
+        const article = {...req.body}
         if(req.params.id) article.id = req.params.id
 
         try {
@@ -22,7 +22,7 @@ module.exports = app => {
         if(article.id) {
             app.db('articles')
                 .update(article)
-                .where({ id: articls.id })
+                .where({ id: article.id })
                 .then(_=> res.status(204).send())
                 .catch(err => res.status(500).send(err))
         } else {

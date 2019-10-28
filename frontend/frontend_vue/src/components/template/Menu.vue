@@ -67,13 +67,17 @@ export default {
 
     .menu a,
     .menu a:hover {
-        color: #fff;
+        background-color: rgba(255,255,255,0.2);
         text-decoration: none;
     }
 
     .menu .tree-node.selected > .tree-content
     .menu .tree-node .tree-content:hover {
         background-color: rgba(255,255,255,0.2);
+    }
+
+    .tree-anchor {
+        color: rgb(107, 98, 98);
     }
 
     .tree-arrow.has-child {

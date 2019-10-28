@@ -85,7 +85,7 @@ module.exports = app => {
                                             .where({ id : req.params.id })
             existsOrError(rowsUpdated, 'User not found!')
 
-            res.status(104).send()
+            res.status(204).send()
         } catch (msg) {
             res.status(400).send(msg)
         }
